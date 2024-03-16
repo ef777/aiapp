@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/provider/notification_provider.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434856,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/data/model/response/notification_model.dart';\nimport 'package:ainsighter/data/repository/notification_repo.dart';\nimport 'package:ainsighter/helper/api_checker.dart';\n\nclass NotificationProvider extends ChangeNotifier {\n  final NotificationRepo notificationRepo;\n  NotificationProvider({@required this.notificationRepo});\n\n  List<NotificationModel> _notificationList;\n  List<NotificationModel> get notificationList => _notificationList != null\n      ? _notificationList.reversed.toList()\n      : _notificationList;\n\n  Future<void> initNotificationList(BuildContext context) async {\n    ApiResponse apiResponse = await notificationRepo.getNotificationList();\n    if (apiResponse.response != null &&\n        apiResponse.response.statusCode == 200) {\n      _notificationList = [];\n      apiResponse.response.data.forEach((notificatioModel) =>\n          _notificationList.add(NotificationModel.fromJson(notificatioModel)));\n    } else {\n      ApiChecker.checkApi(context, apiResponse);\n    }\n    notifyListeners();\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/data/repository/onboarding_repo.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434857,
+            "name": "Commit-0",
+            "content": "import 'package:dio/dio.dart';\nimport 'package:flutter/material.dart';\nimport 'package:ainsighter/data/datasource/remote/dio/dio_client.dart';\nimport 'package:ainsighter/data/datasource/remote/exception/api_error_handler.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/data/model/response/onboarding_model.dart';\nimport 'package:ainsighter/localization/language_constrants.dart';\nimport 'package:ainsighter/utill/images.dart';\n\nclass OnBoardingRepo {\n  final DioClient dioClient;\n\n  OnBoardingRepo({@required this.dioClient});\n\n  Future<ApiResponse> getOnBoardingList(BuildContext context) async {\n    try {\n      List<OnBoardingModel> onBoardingList = [\n        OnBoardingModel(\n            Images.on_boarding_1,\n            getTranslated('select_your_items_to_buy', context),\n            getTranslated('onboarding_1_text', context)),\n        OnBoardingModel(\n            Images.on_boarding_2,\n            getTranslated('order_item_from_your_shopping_bag', context),\n            getTranslated('onboarding_2_text', context)),\n        OnBoardingModel(\n            Images.on_boarding_3,\n            getTranslated('our_system_delivery_item_to_you', context),\n            getTranslated('onboarding_3_text', context)),\n      ];\n\n      Response response = Response(\n          requestOptions: RequestOptions(path: ''),\n          data: onBoardingList,\n          statusCode: 200);\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n}\n"
+        }
+    ]
+}

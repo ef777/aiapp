@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/helper/connectivity.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434863,
+            "name": "Commit-0",
+            "content": "import 'package:connectivity/connectivity.dart';\nimport 'package:flutter/material.dart';\nimport 'package:ainsighter/localization/language_constrants.dart';\nimport 'package:ainsighter/provider/splash_provider.dart';\nimport 'package:provider/provider.dart';\n\nclass NetworkInfo {\n  final Connectivity connectivity;\n  NetworkInfo(this.connectivity);\n\n  Future<bool> get isConnected async {\n    ConnectivityResult _result = await connectivity.checkConnectivity();\n    return _result != ConnectivityResult.none;\n  }\n\n  static void checkConnectivity(BuildContext context) {\n    Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {\n      if (Provider.of<SplashProvider>(context, listen: false)\n          .firstTimeConnectionCheck) {\n        Provider.of<SplashProvider>(context, listen: false)\n            .setFirstTimeConnectionCheck(false);\n      } else {\n        bool isNotConnected = result == ConnectivityResult.none;\n        isNotConnected\n            ? SizedBox()\n            : ScaffoldMessenger.of(context).hideCurrentSnackBar();\n        ScaffoldMessenger.of(context).showSnackBar(SnackBar(\n          backgroundColor: isNotConnected ? Colors.red : Colors.green,\n          duration: Duration(seconds: isNotConnected ? 6000 : 3),\n          content: Text(\n            isNotConnected\n                ? getTranslated('no_connection', context)\n                : getTranslated('connected', context),\n            textAlign: TextAlign.center,\n          ),\n        ));\n      }\n    });\n  }\n}\n"
+        }
+    ]
+}

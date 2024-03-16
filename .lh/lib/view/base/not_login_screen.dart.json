@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/base/not_login_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434852,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/helper/route_helper.dart';\nimport 'package:ainsighter/localization/language_constrants.dart';\nimport 'package:ainsighter/utill/dimensions.dart';\nimport 'package:ainsighter/utill/images.dart';\nimport 'package:ainsighter/utill/styles.dart';\nimport 'package:ainsighter/view/base/custom_button.dart';\n\nclass NotLoggedInScreen extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Center(\n      child: Padding(\n        padding: EdgeInsets.all(Dimensions.PADDING_SIZE_LARGE),\n        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [\n          Image.asset(\n            Images.order_placed,\n            width: MediaQuery.of(context).size.height * 0.25,\n            height: MediaQuery.of(context).size.height * 0.25,\n            color: Theme.of(context).primaryColor,\n          ),\n          SizedBox(height: MediaQuery.of(context).size.height * 0.03),\n          Text(\n            getTranslated('guest_mode', context),\n            style: poppinsRegular.copyWith(\n                fontSize: MediaQuery.of(context).size.height * 0.023),\n            textAlign: TextAlign.center,\n          ),\n          SizedBox(height: MediaQuery.of(context).size.height * 0.02),\n          Text(\n            getTranslated('now_you_are_in_guest_mode', context),\n            style: poppinsRegular.copyWith(\n                fontSize: MediaQuery.of(context).size.height * 0.0175),\n            textAlign: TextAlign.center,\n          ),\n          SizedBox(height: MediaQuery.of(context).size.height * 0.03),\n          SizedBox(\n            width: 100,\n            height: 45,\n            child: CustomButton(\n                buttonText: getTranslated('login', context),\n                onPressed: () {\n                  // Navigator.push(context, MaterialPageRoute(builder: (_) => LoginScreen()));\n                  Navigator.pushNamed(context, RouteHelper.login);\n                }),\n          ),\n        ]),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

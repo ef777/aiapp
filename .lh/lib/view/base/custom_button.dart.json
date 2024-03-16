@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/base/custom_button.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434852,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/utill/color_resources.dart';\nimport 'package:ainsighter/utill/dimensions.dart';\nimport 'package:ainsighter/utill/styles.dart';\n\nclass CustomButton extends StatelessWidget {\n  final String buttonText;\n  final Function onPressed;\n  final double margin;\n  CustomButton(\n      {@required this.buttonText, @required this.onPressed, this.margin = 0});\n\n  @override\n  Widget build(BuildContext context) {\n    return Padding(\n      padding: EdgeInsets.all(margin),\n      child: TextButton(\n        onPressed: onPressed,\n        style: TextButton.styleFrom(\n          backgroundColor: onPressed == null\n              ? ColorResources.getHintColor(context)\n              : Theme.of(context).primaryColor,\n          minimumSize: Size(MediaQuery.of(context).size.width, 50),\n          shape:\n              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),\n        ),\n        child: Text(buttonText,\n            style: poppinsMedium.copyWith(\n                color: Theme.of(context).accentColor,\n                fontSize: Dimensions.FONT_SIZE_LARGE)),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/base/product_shimmer.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434853,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/utill/color_resources.dart';\nimport 'package:ainsighter/utill/dimensions.dart';\nimport 'package:shimmer_animation/shimmer_animation.dart';\n\nclass ProductShimmer extends StatelessWidget {\n  final bool isEnabled;\n  ProductShimmer({@required this.isEnabled});\n\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      height: 85,\n      padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),\n      margin: EdgeInsets.only(bottom: Dimensions.PADDING_SIZE_SMALL),\n      decoration: BoxDecoration(\n        borderRadius: BorderRadius.circular(10),\n        color: ColorResources.getCardBgColor(context),\n      ),\n      child: Shimmer(\n        duration: Duration(seconds: 2),\n        enabled: isEnabled,\n        child: Row(children: [\n          Container(\n            height: 85,\n            width: 85,\n            padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),\n            decoration: BoxDecoration(\n              border: Border.all(\n                  width: 2, color: ColorResources.getGreyColor(context)),\n              borderRadius: BorderRadius.circular(10),\n              color: Colors.grey[300],\n            ),\n          ),\n          Expanded(\n            child: Padding(\n              padding: EdgeInsets.symmetric(\n                  horizontal: Dimensions.PADDING_SIZE_SMALL),\n              child: Column(\n                  crossAxisAlignment: CrossAxisAlignment.start,\n                  mainAxisAlignment: MainAxisAlignment.center,\n                  children: [\n                    Container(\n                        height: 15,\n                        width: MediaQuery.of(context).size.width,\n                        color: Colors.grey[300]),\n                    SizedBox(height: 2),\n                    Container(\n                        height: 15,\n                        width: MediaQuery.of(context).size.width,\n                        color: Colors.grey[300]),\n                    SizedBox(height: 10),\n                    Container(height: 10, width: 50, color: Colors.grey[300]),\n                  ]),\n            ),\n          ),\n          Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [\n            Container(height: 15, width: 50, color: Colors.grey[300]),\n            Container(\n              alignment: Alignment.center,\n              decoration: BoxDecoration(\n                border: Border.all(\n                    width: 1,\n                    color:\n                        ColorResources.getHintColor(context).withOpacity(0.2)),\n                borderRadius: BorderRadius.circular(10),\n              ),\n              child: Icon(Icons.add, color: Theme.of(context).primaryColor),\n            ),\n          ]),\n        ]),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

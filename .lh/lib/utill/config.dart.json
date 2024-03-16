@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/utill/config.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667404690818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667404690818,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\n\nclass Config {\n  Config();\n\n  static const PrimaryColor = Theme.of(context).primaryColor;\n  static const SecondaryColor = Color(0xffF03C63);\n  static const AppBarColor = Color(0xffA0DBE6);\n  static const Petrol = Color(0xff19656D);\n  static const AppYellow = Color(0xffF7CA2E);\n\n  //#F03C63  //F7CA2E\n  static const WhiteSmoke = Color.fromARGB(255, 241, 243, 246);\n  static const Blue = Color(0xff3989ED);\n  static const LightBlue = Color(0xffDFF1F8);\n  static const DarkBlue = Color(0xff1F276D);\n  static const FacebookColor = Color.fromARGB(255, 59, 89, 153);\n  static const ErrorColor = Color.fromARGB(255, 242, 12, 73);\n  static const BlueButtonColor = Color(0xff4c4495);\n  static const UnderlineInputColor = Color(0xff373A3F);\n  static const ConsultantTextColor = Color(0xff020E17);\n  static const LoginButtonTextColor = Color(0xff0E0E0F);\n  static const LoginTextColor = Color(0xff292F3B);\n  static const DotColor = Color(0xff102563);\n  static const TextSpanColor = Color(0xffA0A5AE);\n  static const NotDotColor = Color(0xfff13f6);\n  static const EyeColor = Color(0xff8C929C);\n  static const BorderColor = Color(0xffF3F3F3);\n  static const RedColor = Color(0xffD21313);\n  static const Grey = Color(0xffC4C4C4);\n  static const White = Color(0xffF6F9FE);\n  static const TagColor = Color(0xffF1F4FF);\n  static const GreenColor = Color(0xff15Ab89);\n  static const ProfileBorderColor = Color(0xff95989A);\n  static const rateTextColor = Color(0xffC4C9D2);\n  static const rateBorderColor = Color(0xffE6E6E6);\n  static const CommentProfileBorder = Color(0xff707070);\n\n  static const primaryGradient = <Color>[\n    Color(0xff386FD8),\n    Color(0xff1E51B5),\n  ];\n\n  static BoxDecoration cardBoxDecoration = BoxDecoration(\n    color: Colors.white,\n    borderRadius: BorderRadius.circular(5),\n    boxShadow: [\n      BoxShadow(\n        color: Colors.grey.withOpacity(.2),\n        blurRadius: 20.0, // soften the shadow\n        spreadRadius: 0.0, //extend the shadow\n        offset: Offset(\n          5.0, // Move to right 10  horizontally\n          5.0, // Move to bottom 10 Vertically\n        ),\n      )\n    ],\n  );\n\n  static BoxDecoration buttonDecoration = BoxDecoration(\n      color: Colors.white,\n      border: Border(top: BorderSide(width: 1, color: Config.WhiteSmoke)));\n\n  /*const DarkBlueColor = (\"#102563\");\n  const LightBlueColor = (\"#24B1D8\");*/\n\n  static double getHeight(context) {\n    return MediaQuery.of(context).size.height;\n  }\n\n  static double getWidth(context) {\n    return MediaQuery.of(context).size.width;\n  }\n\n  static String dayMonthYear(date) {\n    var day = DateTime.parse(date).toUtc().toLocal().day.toString();\n    var month = DateTime.parse(date).toUtc().toLocal().month.toString();\n    var year = DateTime.parse(date).toUtc().toLocal().year.toString();\n\n    return day + \".\" + month + \".\" + year;\n  }\n\n  static String getHour(date) {\n    var hour = DateTime.parse(date).toUtc().toLocal().hour.toString();\n    var minute = DateTime.parse(date).toUtc().toLocal().minute.toString();\n\n    return hour + \":\" + minute;\n  }\n}\n"
+        }
+    ]
+}

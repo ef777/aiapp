@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/data/model/response/affiliate_link_model.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434863,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\r\n\r\nimport 'package:ainsighter/data/model/response/classified_model.dart';\r\nimport 'package:ainsighter/data/model/response/user_model.dart';\r\n\r\nimport 'classified_model.dart';\r\n\r\nclass AffiliateLinkModel {\r\n  int id;\r\n  int classifiedId;\r\n  ClassifiedModel classified;\r\n  int userId;\r\n  int visitCount;\r\n  String createdAt;\r\n  String updatedAt;\r\n\r\n  AffiliateLinkModel({\r\n    this.id,\r\n    this.classifiedId,\r\n    this.classified,\r\n    this.userId,\r\n    this.createdAt,\r\n    this.updatedAt,\r\n  });\r\n\r\n  AffiliateLinkModel.fromJson(Map<String, dynamic> json) {\r\n    id = json['id'];\r\n    classifiedId = json['classified_id'];\r\n    if (json['classified'] != null) {\r\n      classified = ClassifiedModel.fromJson(json['classified']);\r\n    }\r\n    userId = json['user_id'];\r\n    visitCount = json['visit_count'];\r\n    createdAt = json['created_at'];\r\n    updatedAt = json['updated_at'];\r\n  }\r\n\r\n  Map<String, dynamic> toJson() {\r\n    final Map<String, dynamic> data = new Map<String, dynamic>();\r\n    data['id'] = this.id;\r\n    data['classified_id'] = this.classifiedId;\r\n    data['user_id'] = this.userId;\r\n    data['visit_count'] = this.visitCount;\r\n    data['created_at'] = this.createdAt;\r\n    data['updated_at'] = this.updatedAt;\r\n    return data;\r\n  }\r\n}\r\n"
+        }
+    ]
+}

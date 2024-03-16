@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/data/repository/profile_repo.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434857,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/data/datasource/remote/dio/dio_client.dart';\nimport 'package:ainsighter/data/datasource/remote/exception/api_error_handler.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/data/model/response/userinfo_model.dart';\nimport 'package:ainsighter/utill/app_constants.dart';\nimport 'package:dio/dio.dart';\nimport 'package:flutter/foundation.dart';\nimport 'package:http/http.dart' as http;\nimport 'package:image_picker/image_picker.dart';\nimport 'package:shared_preferences/shared_preferences.dart';\n\nclass ProfileRepo {\n  final DioClient dioClient;\n  final SharedPreferences sharedPreferences;\n  ProfileRepo({@required this.dioClient, @required this.sharedPreferences});\n\n  Future<ApiResponse> getAddressTypeList() async {\n    try {\n      List<String> addressTypeList = [\n        'Select Address type',\n        'Home',\n        'Office',\n        'Other',\n      ];\n      Response response = Response(\n          requestOptions: RequestOptions(path: ''),\n          data: addressTypeList,\n          statusCode: 200);\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<ApiResponse> getUserInfo() async {\n    try {\n      final response = await dioClient.get(AppConstants.CUSTOMER_INFO_URI);\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<ApiResponse> updateProfile(\n      {String name, String phone, String iban}) async {\n    try {\n      final response = await dioClient.post(AppConstants.UPDATE_PROFILE_URI,\n          data: {'name': name, 'phone': phone, 'iban': iban});\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n}\n"
+        }
+    ]
+}

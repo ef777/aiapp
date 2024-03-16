@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/data/repository/address_repo.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434860,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/data/datasource/remote/dio/dio_client.dart';\nimport 'package:ainsighter/data/datasource/remote/exception/api_error_handler.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/utill/app_constants.dart';\nimport 'package:flutter/material.dart';\n\nclass AddressRepo {\n  final DioClient dioClient;\n  AddressRepo({@required this.dioClient});\n\n  Future<ApiResponse> getCityList() async {\n    try {\n      final response = await dioClient.get(AppConstants.LOAD_CITIES_URI);\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<ApiResponse> getDistrictList(int cityID) async {\n    try {\n      final response =\n          await dioClient.get('${AppConstants.LOAD_DISTRICTS_URI}$cityID');\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<ApiResponse> getNeighborhoodList(List<int> districtIds) async {\n    try {\n      final response = await dioClient.post(\n          '${AppConstants.LOAD_NEIGHBORHOODS_URI}',\n          data: {'ids': districtIds});\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<ApiResponse> getNeighborhoodListByDistrict(int districtId) async {\n    try {\n      final response = await dioClient.get(\n        '${AppConstants.LOAD_NEIGHBORHOODS_BY_DISTRICT_URI}/$districtId',\n      );\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n}\n"
+        }
+    ]
+}

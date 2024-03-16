@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/screens/webview_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569426633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569426633,
+            "name": "Commit-0",
+            "content": "import 'dart:io';\n\nimport 'package:ainsighter/utill/config.dart';\nimport 'package:flutter/material.dart';\nimport 'package:webview_flutter/webview_flutter.dart';\n\nclass WebViewScreen extends StatefulWidget {\n  WebViewScreen({this.title, this.url});\n\n  final String title;\n  final String url;\n\n  @override\n  _WebViewScreenState createState() => _WebViewScreenState();\n}\n\nclass _WebViewScreenState extends State<WebViewScreen> {\n  @override\n  void initState() {\n    super.initState();\n    // Enable virtual display.\n    if (Platform.isAndroid) WebView.platform = AndroidWebView();\n  }\n\n  @override\n  Widget build(BuildContext context) {\n    return SafeArea(\n      child: Scaffold(\n        backgroundColor: Colors.white,\n        appBar: AppBar(\n          toolbarHeight: 70,\n          backgroundColor: Config.PrimaryColor,\n          title: Text(widget.title),\n          centerTitle: true,\n        ),\n        body: Padding(\n          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),\n          child: WebView(\n            initialUrl: widget.url,\n          ),\n        ),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

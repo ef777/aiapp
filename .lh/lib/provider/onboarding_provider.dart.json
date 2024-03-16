@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/provider/onboarding_provider.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434854,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/data/model/response/onboarding_model.dart';\nimport 'package:ainsighter/data/repository/onboarding_repo.dart';\n\nclass OnBoardingProvider with ChangeNotifier {\n  final OnBoardingRepo onboardingRepo;\n  OnBoardingProvider({@required this.onboardingRepo});\n\n  List<OnBoardingModel> _onBoardingList = [];\n  List<OnBoardingModel> get onBoardingList => _onBoardingList;\n\n  int _selectedIndex = 0;\n  int get selectedIndex => _selectedIndex;\n\n  void setSelectIndex(int index) {\n    _selectedIndex = index;\n    notifyListeners();\n  }\n\n  void getBoardingList(BuildContext context) async {\n    ApiResponse apiResponse = await onboardingRepo.getOnBoardingList(context);\n    if (apiResponse.response != null &&\n        apiResponse.response.statusCode == 200) {\n      _onBoardingList.clear();\n      _onBoardingList.addAll(apiResponse.response.data);\n      notifyListeners();\n    } else {\n      print(apiResponse.error.toString());\n    }\n  }\n}\n"
+        }
+    ]
+}

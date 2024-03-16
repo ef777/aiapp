@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/provider/theme_provider.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434856,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/foundation.dart';\nimport 'package:ainsighter/utill/app_constants.dart';\nimport 'package:shared_preferences/shared_preferences.dart';\n\nclass ThemeProvider with ChangeNotifier {\n  final SharedPreferences sharedPreferences;\n  ThemeProvider({@required this.sharedPreferences}) {\n    _loadCurrentTheme();\n  }\n\n  bool _darkTheme = true;\n  bool get darkTheme => _darkTheme;\n\n  void toggleTheme() {\n    _darkTheme = !_darkTheme;\n    sharedPreferences.setBool(AppConstants.THEME, _darkTheme);\n    notifyListeners();\n  }\n\n  void _loadCurrentTheme() async {\n    _darkTheme = sharedPreferences.getBool(AppConstants.THEME) ?? false;\n    notifyListeners();\n  }\n}\n"
+        }
+    ]
+}

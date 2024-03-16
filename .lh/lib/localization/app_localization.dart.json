@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/localization/app_localization.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434856,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\n\nimport 'package:ainsighter/utill/app_constants.dart';\nimport 'package:flutter/material.dart';\nimport 'package:flutter/services.dart';\n\nclass AppLocalization {\n  AppLocalization(this.locale);\n\n  final Locale locale;\n\n  static AppLocalization of(BuildContext context) {\n    return Localizations.of<AppLocalization>(context, AppLocalization);\n  }\n\n  Map<String, String> _localizedValues;\n\n  Future<void> load() async {\n    String jsonStringValues = await rootBundle\n        .loadString('assets/language/${locale.languageCode}.json');\n    Map<String, dynamic> mappedJson = json.decode(jsonStringValues);\n    _localizedValues =\n        mappedJson.map((key, value) => MapEntry(key, value.toString()));\n  }\n\n  String translate(String key) {\n    return _localizedValues[key];\n  }\n\n  static const LocalizationsDelegate<AppLocalization> delegate =\n      _DemoLocalizationsDelegate();\n}\n\nclass _DemoLocalizationsDelegate\n    extends LocalizationsDelegate<AppLocalization> {\n  const _DemoLocalizationsDelegate();\n\n  @override\n  bool isSupported(Locale locale) {\n    List<String> _languageString = [];\n    AppConstants.languages.forEach((language) {\n      _languageString.add(language.languageCode);\n    });\n    return _languageString.contains(locale.languageCode);\n  }\n\n  @override\n  Future<AppLocalization> load(Locale locale) async {\n    AppLocalization localization = new AppLocalization(locale);\n    await localization.load();\n    return localization;\n  }\n\n  @override\n  bool shouldReload(LocalizationsDelegate<AppLocalization> old) => false;\n}\n"
+        }
+    ]
+}

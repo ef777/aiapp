@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/provider/splash_provider.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434853,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/data/model/response/config_model.dart';\nimport 'package:ainsighter/data/repository/splash_repo.dart';\n\nclass SplashProvider extends ChangeNotifier {\n  final SplashRepo splashRepo;\n  SplashProvider({@required this.splashRepo});\n\n  ConfigModel _configModel;\n  BaseUrls _baseUrls;\n  int _pageIndex = 0;\n  bool _fromSetting = false;\n  bool _firstTimeConnectionCheck = true;\n\n  ConfigModel get configModel => _configModel;\n  BaseUrls get baseUrls => _baseUrls;\n  int get pageIndex => _pageIndex;\n  bool get fromSetting => _fromSetting;\n  bool get firstTimeConnectionCheck => _firstTimeConnectionCheck;\n\n  Future<bool> initConfig(BuildContext context) async {\n    ApiResponse apiResponse = await splashRepo.getConfig();\n    bool isSuccess;\n    if (apiResponse.response != null &&\n        apiResponse.response.statusCode == 200) {\n      _configModel = ConfigModel.fromJson(apiResponse.response.data);\n      _baseUrls = ConfigModel.fromJson(apiResponse.response.data).baseUrls;\n      isSuccess = true;\n      notifyListeners();\n    } else {\n      isSuccess = false;\n      print(apiResponse.error);\n      ScaffoldMessenger.of(context).showSnackBar(SnackBar(\n          content: Text(apiResponse.error.toString()),\n          backgroundColor: Colors.red));\n    }\n    return isSuccess;\n  }\n\n  void setFirstTimeConnectionCheck(bool isChecked) {\n    _firstTimeConnectionCheck = isChecked;\n  }\n\n  void setPageIndex(int index) {\n    _pageIndex = index;\n    notifyListeners();\n  }\n\n  Future<bool> initSharedData() {\n    return splashRepo.initSharedData();\n  }\n\n  Future<bool> removeSharedData() {\n    return splashRepo.removeSharedData();\n  }\n\n  void setFromSetting(bool isSetting) {\n    _fromSetting = isSetting;\n  }\n}\n"
+        }
+    ]
+}

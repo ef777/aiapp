@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/screens/dashboard/components/recent_files.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569432653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569432653,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/utill/config.dart';\nimport 'package:data_table_2/data_table_2.dart';\nimport 'package:flutter/material.dart';\nimport 'package:flutter_svg/svg.dart';\n\ndouble defaultPadding = 10;\n\nclass RecentFiles extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      padding: EdgeInsets.all(defaultPadding),\n      decoration: BoxDecoration(\n        color: Colors.grey.shade200,\n        borderRadius: const BorderRadius.all(Radius.circular(10)),\n      ),\n      child: Column(\n        crossAxisAlignment: CrossAxisAlignment.start,\n        children: [\n          // Text(\n          //   \"Son Satışlar\",\n          //   style: Theme.of(context).textTheme.subtitle1,\n          // ),\n          SizedBox(\n            width: double.infinity,\n            child: DataTable2(\n              columnSpacing: defaultPadding,\n              minWidth: 200,\n              columns: [\n                DataColumn(\n                  label: Text(\"İlan\"),\n                ),\n                DataColumn(\n                  label: Text(\"Tarih\"),\n                ),\n              ],\n              rows: List.generate(\n                5,\n                (index) => recentFileDataRow(),\n              ),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n\nDataRow recentFileDataRow() {\n  return DataRow(\n    cells: [\n      DataCell(\n        Row(\n          children: [\n            SvgPicture.asset(\n              '',\n              height: 30,\n              width: 30,\n            ),\n            Padding(\n              padding: const EdgeInsets.symmetric(horizontal: 10),\n              child: Text('dssa'),\n            ),\n          ],\n        ),\n      ),\n      DataCell(Text('12532.43')),\n    ],\n  );\n}\n"
+        }
+    ]
+}

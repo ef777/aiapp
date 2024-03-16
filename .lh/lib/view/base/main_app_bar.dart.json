@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/base/main_app_bar.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434853,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/helper/route_helper.dart';\nimport 'package:ainsighter/utill/app_constants.dart';\nimport 'package:ainsighter/utill/dimensions.dart';\nimport 'package:ainsighter/utill/images.dart';\nimport 'package:ainsighter/utill/styles.dart';\n\nclass MainAppBar extends StatelessWidget implements PreferredSizeWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Center(\n      child: Container(\n          color: Theme.of(context).accentColor,\n          width: 1170.0,\n          height: 45.0,\n          child: Row(\n            mainAxisAlignment: MainAxisAlignment.spaceBetween,\n            children: [\n              Padding(\n                padding: const EdgeInsets.all(8.0),\n                child: InkWell(\n                    onTap: () => Navigator.pushNamed(context, RouteHelper.menu),\n                    child: Row(\n                      children: [\n                        Image.asset(Images.app_logo,\n                            color: Theme.of(context).primaryColor),\n                        SizedBox(width: Dimensions.PADDING_SIZE_SMALL),\n                        Text(AppConstants.APP_NAME,\n                            style: poppinsMedium.copyWith(\n                                color: Theme.of(context).primaryColor)),\n                      ],\n                    )),\n              ),\n            ],\n          )),\n    );\n  }\n\n  @override\n  Size get preferredSize => Size(double.maxFinite, 50);\n}\n"
+        }
+    ]
+}

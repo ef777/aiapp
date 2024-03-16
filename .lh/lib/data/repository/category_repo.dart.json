@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/data/repository/category_repo.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434857,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/data/datasource/remote/dio/dio_client.dart';\nimport 'package:ainsighter/data/datasource/remote/exception/api_error_handler.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/utill/app_constants.dart';\n\nclass CategoryRepo {\n  final DioClient dioClient;\n  CategoryRepo({@required this.dioClient});\n\n  Future<ApiResponse> getCategoryList() async {\n    try {\n      final response = await dioClient.get(AppConstants.CATEGORY_URI);\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<ApiResponse> getSubCategoryList(String parentID) async {\n    try {\n      final response =\n          await dioClient.get('${AppConstants.SUB_CATEGORY_URI}$parentID');\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<ApiResponse> getCategoryProductList(String categoryID) async {\n    try {\n      final response = await dioClient\n          .get('${AppConstants.CATEGORY_PRODUCT_URI}$categoryID');\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/base/title_widget.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434853,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/utill/config.dart';\nimport 'package:flutter/material.dart';\nimport 'package:google_fonts/google_fonts.dart';\n\nclass TitleWidget extends StatelessWidget {\n  final String title;\n  final Function onTap;\n  TitleWidget({@required this.title, this.onTap});\n\n  @override\n  Widget build(BuildContext context) {\n    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [\n      Text(title,\n          style: GoogleFonts.poppins(fontSize: 20, color: Config.PrimaryColor)),\n      // onTap != null ? InkWell(\n      //   onTap: onTap,\n      //   child: Padding(\n      //     padding: EdgeInsets.fromLTRB(10, 5, 0, 5),\n      //     child: Text(\n      //       getTranslated('view_all', context),\n      //       style: poppinsRegular.copyWith(fontSize: Dimensions.FONT_SIZE_SMALL, color: ColorResources.getHintColor(context)),\n      //     ),\n      //   ),\n      // ) : SizedBox(),\n    ]);\n  }\n}\n"
+        }
+    ]
+}

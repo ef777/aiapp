@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/screens/dashboard/components/storage_info_card.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569432653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569432653,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/utill/config.dart';\nimport 'package:flutter/material.dart';\nimport 'package:flutter_svg/flutter_svg.dart';\n\ndouble defaultPadding = 10;\n\nclass StorageInfoCard extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      margin: EdgeInsets.only(top: defaultPadding),\n      padding: EdgeInsets.all(defaultPadding),\n      decoration: BoxDecoration(\n        border:\n            Border.all(width: 2, color: Config.PrimaryColor.withOpacity(0.15)),\n        borderRadius: const BorderRadius.all(\n          Radius.circular(10),\n        ),\n      ),\n      child: Row(\n        children: [\n          SizedBox(\n            height: 20,\n            width: 20,\n            child: SvgPicture.asset(''),\n          ),\n          Expanded(\n            child: Padding(\n              padding: const EdgeInsets.symmetric(horizontal: 10),\n              child: Column(\n                crossAxisAlignment: CrossAxisAlignment.start,\n                children: [\n                  Text(\n                    'fds',\n                    maxLines: 1,\n                    overflow: TextOverflow.ellipsis,\n                  ),\n                  Text(\n                    \"3 Files\",\n                    style: Theme.of(context)\n                        .textTheme\n                        .caption\n                        .copyWith(color: Colors.white70),\n                  ),\n                ],\n              ),\n            ),\n          ),\n          Text('5')\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

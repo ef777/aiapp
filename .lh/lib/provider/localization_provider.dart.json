@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/provider/localization_provider.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434855,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/utill/app_constants.dart';\nimport 'package:shared_preferences/shared_preferences.dart';\n\nclass LocalizationProvider extends ChangeNotifier {\n  final SharedPreferences sharedPreferences;\n\n  LocalizationProvider({@required this.sharedPreferences}) {\n    _loadCurrentLanguage();\n  }\n\n  int _languageIndex;\n  Locale _locale = Locale(AppConstants.languages[0].languageCode,\n      AppConstants.languages[0].countryCode);\n  bool _isLtr = true;\n\n  Locale get locale => _locale;\n  bool get isLtr => _isLtr;\n  int get languageIndex => _languageIndex;\n\n  void _loadCurrentLanguage() async {\n    _locale = Locale(\n        sharedPreferences.getString(AppConstants.LANGUAGE_CODE) ??\n            AppConstants.languages[0].languageCode,\n        sharedPreferences.getString(AppConstants.COUNTRY_CODE) ??\n            AppConstants.languages[0].countryCode);\n    _isLtr = _locale.languageCode != 'ar';\n    notifyListeners();\n  }\n\n  void _saveLanguage(Locale locale) async {\n    sharedPreferences.setString(\n        AppConstants.LANGUAGE_CODE, locale.languageCode);\n    sharedPreferences.setString(AppConstants.COUNTRY_CODE, locale.countryCode);\n  }\n\n  void setLanguage(Locale locale) {\n    _locale = locale;\n    if (_locale.languageCode == 'ar') {\n      _isLtr = false;\n    } else {\n      _isLtr = true;\n    }\n    AppConstants.languages.forEach((language) {\n      if (language.languageCode == _locale.languageCode) {\n        _languageIndex = AppConstants.languages.indexOf(language);\n      }\n    });\n\n    _saveLanguage(_locale);\n    notifyListeners();\n  }\n}\n"
+        }
+    ]
+}

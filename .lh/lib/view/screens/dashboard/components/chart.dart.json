@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/screens/dashboard/components/chart.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569432653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569432653,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/utill/config.dart';\nimport 'package:fl_chart/fl_chart.dart';\nimport 'package:flutter/material.dart';\n\ndouble defaultPadding = 10;\n\nclass Chart extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return SizedBox(\n      height: 140,\n      child: Stack(\n        children: [\n          PieChart(\n            PieChartData(\n              sectionsSpace: 0,\n              centerSpaceRadius: 60,\n              startDegreeOffset: -90,\n              sections: paiChartSelectionDatas,\n            ),\n          ),\n          Positioned.fill(\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              children: [\n                SizedBox(height: 16),\n                Text(\n                  \"300 ₺\",\n                  style: Theme.of(context).textTheme.headline4.copyWith(\n                        color: Config.PrimaryColor,\n                        fontSize: 24,\n                        fontWeight: FontWeight.w600,\n                        height: 0.5,\n                      ),\n                ),\n              ],\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n\nList<PieChartSectionData> paiChartSelectionDatas = [\n  PieChartSectionData(\n    color: Config.PrimaryColor,\n    value: 25,\n    showTitle: false,\n    title: 'Satış',\n    radius: 25,\n  ),\n  PieChartSectionData(\n    color: Config.AppBarColor,\n    value: 20,\n    title: 'Tıklama',\n    showTitle: false,\n    radius: 22,\n  ),\n];\n"
+        }
+    ]
+}

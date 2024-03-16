@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/screens/dashboard/components/header.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569432653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569432653,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/utill/config.dart';\nimport 'package:flutter/material.dart';\nimport 'package:flutter_svg/flutter_svg.dart';\nimport 'package:provider/provider.dart';\n\nclass Header extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Row(\n      children: [\n        IconButton(\n          icon: Icon(Icons.menu),\n          onPressed: () {},\n        ),\n        Expanded(child: SearchField()),\n        ProfileCard()\n      ],\n    );\n  }\n}\n\nclass ProfileCard extends StatelessWidget {\n  double defaultPadding = 10;\n\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      margin: EdgeInsets.only(left: defaultPadding),\n      padding: EdgeInsets.symmetric(\n        horizontal: defaultPadding,\n        vertical: defaultPadding / 2,\n      ),\n      decoration: BoxDecoration(\n        color: Config.PrimaryColor,\n        borderRadius: const BorderRadius.all(Radius.circular(10)),\n        border: Border.all(color: Colors.white10),\n      ),\n      child: Row(\n        children: [\n          Image.asset(\n            \"assets/images/profile_pic.png\",\n            height: 38,\n          ),\n          Icon(Icons.keyboard_arrow_down),\n        ],\n      ),\n    );\n  }\n}\n\nclass SearchField extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return TextField(\n      decoration: InputDecoration(\n        hintText: \"Search\",\n        fillColor: Config.PrimaryColor,\n        filled: true,\n        border: OutlineInputBorder(\n          borderSide: BorderSide.none,\n          borderRadius: const BorderRadius.all(Radius.circular(10)),\n        ),\n        suffixIcon: InkWell(\n          onTap: () {},\n          child: Container(\n            padding: EdgeInsets.all(10 * 0.75),\n            margin: EdgeInsets.symmetric(horizontal: 10 / 2),\n            decoration: BoxDecoration(\n              color: Config.PrimaryColor,\n              borderRadius: const BorderRadius.all(Radius.circular(10)),\n            ),\n            child: SvgPicture.asset(\"assets/icons/Search.svg\"),\n          ),\n        ),\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/utill/color_resources.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434862,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\nimport 'package:ainsighter/provider/theme_provider.dart';\nimport 'package:provider/provider.dart';\n\nclass ColorResources {\n  static Color getGreyColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFFb2b8bd)\n        : Color(0xFFE4EAEF);\n  }\n\n  static Color getTimeColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFFFFFFFF)\n        : Color(0xFFE4EAEF);\n  }\n\n  static Color getDarkColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFF4d5054)\n        : Color(0xFF25282B);\n  }\n\n  static Color getCardBgColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFFFFFFFF).withOpacity(0.05)\n        : Color(0xFFFFFFFF);\n  }\n\n  static Color getTextColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFFFFFFFF).withOpacity(0.6)\n        : Color(0xFF1F1F1F);\n  }\n\n  static Color getHintColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFF98a1ab)\n        : Color(0xFF7A7A7A);\n  }\n\n  static Color getBackgroundColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFF4d5054)\n        : Color(0xFFFAFAFA);\n  }\n\n  static Color getGreyLightColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFFb2b8bd)\n        : Color(0xFF98a1ab);\n  }\n\n  static Color getYellow(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFF916129)\n        : Color(0xFFFFAA47);\n  }\n\n  static Color getGreen(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFF167d3c)\n        : Color(0xFF23CB60);\n  }\n\n  static Color getCategoryBgColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFFFFFFFF)\n        : Color(0xFFb2b8bd);\n  }\n\n  static Color getOrderColor(BuildContext context) {\n    return Provider.of<ThemeProvider>(context).darkTheme\n        ? Color(0xFF4d5054)\n        : Color(0xFFE4EAEF).withOpacity(0.9);\n  }\n}\n"
+        }
+    ]
+}

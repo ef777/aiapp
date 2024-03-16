@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/data/repository/splash_repo.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569434856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569434856,
+            "name": "Commit-0",
+            "content": "import 'package:ainsighter/data/datasource/remote/dio/dio_client.dart';\nimport 'package:ainsighter/data/datasource/remote/exception/api_error_handler.dart';\nimport 'package:ainsighter/data/model/response/base/api_response.dart';\nimport 'package:ainsighter/utill/app_constants.dart';\nimport 'package:flutter/material.dart';\nimport 'package:shared_preferences/shared_preferences.dart';\n\nclass SplashRepo {\n  final DioClient dioClient;\n  final SharedPreferences sharedPreferences;\n  SplashRepo({@required this.sharedPreferences, @required this.dioClient});\n\n  Future<ApiResponse> getConfig() async {\n    try {\n      final response = await dioClient.get(AppConstants.CONFIG_URI);\n      return ApiResponse.withSuccess(response);\n    } catch (e) {\n      return ApiResponse.withError(ApiErrorHandler.getMessage(e));\n    }\n  }\n\n  Future<bool> initSharedData() {\n    if (!sharedPreferences.containsKey(AppConstants.THEME)) {\n      return sharedPreferences.setBool(AppConstants.THEME, false);\n    }\n    if (!sharedPreferences.containsKey(AppConstants.COUNTRY_CODE)) {\n      return sharedPreferences.setString(AppConstants.COUNTRY_CODE, 'US');\n    }\n    if (!sharedPreferences.containsKey(AppConstants.LANGUAGE_CODE)) {\n      return sharedPreferences.setString(AppConstants.LANGUAGE_CODE, 'tr');\n    }\n    return Future.value(true);\n  }\n\n  Future<bool> removeSharedData() {\n    return sharedPreferences.clear();\n  }\n}\n"
+        }
+    ]
+}

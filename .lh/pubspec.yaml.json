@@ -1,0 +1,18 @@
+{
+    "sourceFile": "pubspec.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569423877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569423877,
+            "name": "Commit-0",
+            "content": "name: ainsighter\r\ndescription: Ainsighter mobil uygulaması\r\n\r\npublish_to: \"none\" # Remove this line if you wish to publish to pub.dev\r\n\r\nversion: 1.0.0+1\r\n\r\nenvironment:\r\n  sdk: \">=2.11.0 <3.0.0\"\r\n\r\ndependencies:\r\n  flutter:\r\n    sdk: flutter\r\n  flutter_localizations:\r\n    sdk: flutter\r\n\r\n  cupertino_icons: ^1.0.2\r\n  provider: ^5.0.0\r\n  dio: ^4.0.0\r\n  shared_preferences: ^2.0.6\r\n  intl: ^0.17.0\r\n  image_picker: ^0.8.3+2\r\n  connectivity: ^3.0.6\r\n  http: ^0.13.3\r\n  fluro: ^2.0.3\r\n  flutter_svg: ^0.22.0\r\n  cached_network_image: ^3.1.0\r\n  simple_animations: ^2.0.0\r\n  shimmer_animation: ^2.1.0+1\r\n  google_fonts: ^2.1.0\r\n  font_awesome_flutter: ^9.1.0\r\n  mask_text_input_formatter: ^2.0.0\r\n  lottie: ^1.1.0\r\n  get_it: ^7.2.0\r\n  dropdown_search: ^0.6.3\r\n  bubble_tab_indicator: ^0.1.6\r\n  curved_navigation_bar: ^1.0.1\r\n  rflutter_alert: ^2.0.4\r\n  flutter_rating_bar: ^4.0.0\r\n  carousel_slider: ^4.0.0\r\n  url_launcher: ^6.0.16\r\n  sliding_sheet: ^0.5.2\r\n  flutter_staggered_grid_view: ^0.4.1\r\n  full_screen_image: ^1.0.2\r\n  data_table_2: ^2.2.1\r\n  fl_chart: ^0.55.1\r\n  flutter_share: ^2.0.0\r\n  infinite_scroll_pagination: ^3.2.0\r\n  image_cropper: ^1.3.1\r\n  pin_code_fields: ^7.4.0\r\n  uni_links: ^0.5.1\r\n  syncfusion_flutter_sliders: ^20.2.50\r\n  currency_text_input_formatter: ^2.1.7\r\n  flutter_masked_text: ^0.7.0\r\n  webview_flutter: ^3.0.4\r\n  selectify:\r\n    path: ./packages/selectify\r\n\r\ndev_dependencies:\r\n  flutter_test:\r\n    sdk: flutter\r\n\r\nflutter:\r\n  uses-material-design: true\r\n\r\n  assets:\r\n    - assets/image/\r\n    - assets/icons/\r\n    - assets/language/\r\n\r\n  fonts:\r\n    - family: Poppins\r\n      fonts:\r\n        - asset: assets/font/Poppins-Light.ttf\r\n          weight: 300\r\n        - asset: assets/font/Poppins-Regular.ttf\r\n          weight: 400\r\n        - asset: assets/font/Poppins-Medium.ttf\r\n          weight: 500\r\n        - asset: assets/font/Poppins-SemiBold.ttf\r\n          weight: 600\r\n        - asset: assets/font/Poppins-Bold.ttf\r\n          weight: 700\r\n"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "160244222679",
+    "project_id": "realai-f1928",
+    "storage_bucket": "realai-f1928.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160244222679:android:82f5db0d6182836052fe92",
+        "android_client_info": {
+          "package_name": "realai.photo.generator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160244222679-1ijvcmctc08l2upllbavfg0copoknp9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgKt0F5fJyn7Dea7Ru6bBysGN-iIaxEnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160244222679-1ijvcmctc08l2upllbavfg0copoknp9l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "160244222679-61ls43d0d36s765vtks4ahttrceiba17.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "realai.photo.generator"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

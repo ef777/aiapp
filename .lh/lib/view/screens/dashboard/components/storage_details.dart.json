@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/view/screens/dashboard/components/storage_details.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1667569433425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1667569433425,
+            "name": "Commit-0",
+            "content": "// import 'package:ainsighter/data/model/response/affiliate_link_model.dart';\n// import 'package:ainsighter/utill/config.dart';\n// import 'package:fl_chart/fl_chart.dart';\n// import 'package:flutter/material.dart';\n//\n// class StarageDetails extends StatefulWidget {\n//\n//   List<AffiliateLinkModel> report;\n//\n//   StarageDetails({this.report});\n//\n//   @override\n//   _StarageDetailsState createState() => _StarageDetailsState();\n// }\n//\n// class _StarageDetailsState extends State<StarageDetails> {\n//\n//   Future _future;\n//\n//   Future<List<PieChartSectionData>> getData() {\n//     List<PieChartSectionData> list = [];\n//\n//     widget.report.forEach((item) {\n//       list.add(PieChartSectionData(\n//         color: Config.PrimaryColor,\n//         value: item.visitCount.toDouble(),\n//         showTitle: false,\n//         title: 'Satış',\n//         radius: 25,\n//       ));\n//     });\n//\n//     return list;\n//   }\n//\n//   @override\n//   void initState() {\n//     _future = getData();\n//     super.initState();\n//   }\n//\n//   @override\n//   Widget build(BuildContext context) {\n//     return Container(\n//       decoration: BoxDecoration(\n//         // color: Config.PrimaryColor.withOpacity(.5),\n//           borderRadius: BorderRadius.circular(10)),\n//       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),\n//       child: SizedBox(\n//         height: 140,\n//         child: Stack(\n//           children: [\n//             FutureBuilder(\n//               builder: (context, snapshot) {\n//                 if (snapshot.hasData)\n//                   return PieChart(\n//                     PieChartData(\n//                         sectionsSpace: 0,\n//                         centerSpaceRadius: 60,\n//                         startDegreeOffset: -90,\n//                         sections: snapshot.data),\n//                   );\n//                 return CircularProgressIndicator();\n//               },\n//               future: getData(),\n//             ),\n//             Positioned.fill(\n//               child: Column(\n//                 mainAxisAlignment: MainAxisAlignment.center,\n//                 children: [\n//                   SizedBox(height: 16),\n//                   Text(\n//                     \"300 ₺\",\n//                     style: Theme.of(context).textTheme.headline4.copyWith(\n//                       color: Config.PrimaryColor,\n//                       fontSize: 24,\n//                       fontWeight: FontWeight.w600,\n//                       height: 0.5,\n//                     ),\n//                   ),\n//                 ],\n//               ),\n//             ),\n//           ],\n//         ),\n//       ),\n//     );\n//   }\n// }\n//\n//\n// List<PieChartSectionData> paiChartSelectionDatas = [\n//   PieChartSectionData(\n//     color: Config.PrimaryColor,\n//     value: 25,\n//     showTitle: false,\n//     title: 'Satış',\n//     radius: 25,\n//   ),\n//   PieChartSectionData(\n//     color: Config.AppBarColor,\n//     value: 20,\n//     title: 'Tıklama',\n//     showTitle: false,\n//     radius: 22,\n//   ),\n// ];\n"
+        }
+    ]
+}
